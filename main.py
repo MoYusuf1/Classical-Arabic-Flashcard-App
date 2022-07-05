@@ -1,7 +1,14 @@
 from tkinter import *
 import random
+import pandas
+
 # ------------------------------------------
 BACKGROUND_COLOR = "#B1DDC6"
+
+
+# ----------Card Functionality-------------
+def card_change():
+    pass
 
 
 # ----------Button Functionality------------
@@ -27,7 +34,7 @@ window.title("Arabic Flashcard App")
 canvas = Canvas(width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0)
 
 # stored the front card image onto a variable
-card_front_img = PhotoImage(file=".\images\card_front.png")
+card_front_img = PhotoImage(file="images/card_front.png")
 
 # added the front card image to the canvas
 canvas.create_image(400, 263, image=card_front_img)
