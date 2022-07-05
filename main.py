@@ -17,7 +17,11 @@ def wrong_button_func():
 
 
 def right_button_func():
-    pass
+    random_int = random.randint(1, 5000)
+
+    data = pandas.read_csv("data/Quran_Words.csv")
+    new_word = data._get_value(random_int, "Arabic")
+    canvas.itemconfig(word_text, text=f"{new_word}")
 
 
 # --------------UI Interface----------------
@@ -43,10 +47,11 @@ canvas.create_image(400, 263, image=card_front_img)
 canvas.grid(row=0, column=0, columnspan=2)
 
 # shows the user what the langauge is
-language_text = canvas.create_text(400, 130, text="Arabic", font=("Arial", 50, "italic"))
+language_text = canvas.create_text(400, 130, text="Arabic", font=("Arial", 50, "italic"), fill="black")
+
 
 # shows the user the word to translate
-word_text = canvas.create_text(400, 280, text="Sample", font=("Arial", 70, "bold"))
+word_text = canvas.create_text(400, 280, text="Sample", font=("Arial", 70, "bold"), fill="black")
 
 # creates, configures, and aligns the wrong button on the canvas
 wrong_button_img = PhotoImage(file="images/wrong.png")
